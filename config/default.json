@@ -1,0 +1,3 @@
+{
+	"mongoURI": "mongodb+srv://davidedsams:g00dpassword@foodbanks.jagv2.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
