@@ -22,12 +22,10 @@ const Navbar = ({ title, icon }) => {
 
 Navbar.propTypes = {
 	title: PropTypes.string.isRequired,
-	icon: PropTypes.string,
 };
 
 Navbar.defaultProps = {
 	title: 'Food Bank Finder',
-	icon: 'fas fa-id-card-alt',
 };
 
 export default Navbar

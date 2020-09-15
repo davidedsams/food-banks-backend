@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import uuid from 'uuid';
-import bankContext from './bankContext';
+import { v4 as uuid } from 'uuid';
+import BankContext from './bankContext';
 import bankReducer from './bankReducer';
 import {
 	ADD_BANK,
@@ -13,7 +13,7 @@ import {
 } from '../types';
 
 const BankState = (props) => {
-	const InitialState = {
+	const initialState = {
 		banks: [
 			{
 				id: 1,
@@ -35,6 +35,10 @@ const BankState = (props) => {
 	const [state, dispatch] = useReducer(bankReducer, initialState);
 
 	// Add Bank
+	const addBank = (bank) => {
+		bank.id = uuid();
+		dispatch({ type: ADD_BANK, payload: bank });
+	};
 
 	// Delete Bank
 
@@ -51,7 +55,7 @@ const BankState = (props) => {
 	return (
 		<BankContext.Provider
 			value={{
-				contacts: state.contacts,
+				banks: state.banks,
 			}}>
 			{props.children}
 		</BankContext.Provider>
