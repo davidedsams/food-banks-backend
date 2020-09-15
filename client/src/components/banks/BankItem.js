@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import BankContext from '../../context/bank/bankContext';
 
 const BankItem = ({ bank }) => {
+    const bankContext = useContext(BankContext);
+    const { deleteBank } = bankContext;
+
 	const { id, name, location, typesOfFood, hoursOfOperation } = bank;
 
+    const onDelete = () => {
+        deleteBank(id);
+    }
+
 	return (
-		<div className='card bg-light'>
-			<h3 className='text-primary text-left'>{name}</h3>
-			<ul className='list'>
+		<div className=''>
+			<h3 className=''>{name}</h3>
+			<ul className=''>
 				{location && (
 					<li>
 						<i className=''></i> {location}
@@ -26,7 +34,7 @@ const BankItem = ({ bank }) => {
 			</ul>
 			<p>
 				<button className=''>Edit</button>
-				<button className=''>Delete</button>
+				<button className='' onClick={onDelete}>Delete</button>
 			</p>
 		</div>
 	);

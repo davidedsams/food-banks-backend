@@ -41,6 +41,9 @@ const BankState = (props) => {
 	};
 
 	// Delete Bank
+	const deleteBank = id => {
+		dispatch({ type: DELETE_BANK, payload: id });
+	};
 
 	// Set Current Bank
 
@@ -56,6 +59,8 @@ const BankState = (props) => {
 		<BankContext.Provider
 			value={{
 				banks: state.banks,
+				addBank,
+				deleteBank
 			}}>
 			{props.children}
 		</BankContext.Provider>

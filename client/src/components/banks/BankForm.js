@@ -46,14 +46,14 @@ const BankForm = () => {
 			<input
 				type='text'
 				placeholder='Types Of Food'
-				name='types of food'
+				name='typesOfFood'
 				value={typesOfFood}
 				onChange={onChange}
 			/>
 			<input
 				type='text'
 				placeholder='Hours Of Operation'
-				name='hours of operation'
+				name='hoursOfOperation'
 				value={hoursOfOperation}
 				onChange={onChange}
 			/>
